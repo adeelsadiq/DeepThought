@@ -1,6 +1,5 @@
 package DeepThought;
 import java.awt.EventQueue;
-import java.util.*;
 
 
 public class TheOracle {

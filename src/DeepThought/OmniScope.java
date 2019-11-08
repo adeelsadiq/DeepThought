@@ -53,18 +53,14 @@ public class OmniScope extends TheTruth implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) 
     { 
-        String s = e.getActionCommand(); 
-        if (s.equals("Reset")) { 
-        
-           TheKeeper keeper = new TheKeeper();
-           keeper.erase();
-        }else if (s.equals("Send")) { 
+		TheKeeper keeper = new TheKeeper(); //the file writing method keeper gets an instance created 
+        String s = e.getActionCommand();  //creating the string instance to hold the action command 
+        if (s.equals("Reset")) { //Verifying which button was pushed
+           keeper.erase(); //erasing the file if reset was pushed 
+        }else if (s.equals("Send")) { //Verifying which button was pushed
 	        	
-	           message = tf.getText();
-	           TheKeeper keeper = new TheKeeper(); //the file writing method keeper gets an instance created 
-	           keeper.Keep("You asked DeepThought: "+message +"\nDeepThought says: "+ANSWER+"\n");
-	           ta.append("You asked DeepThought: "+message +"\nDeepThought says: "+ANSWER+"\n");
-//	           ta.append("\nDeepThought says: "+ANSWER);
+	           this.message = tf.getText();
+	           ta.append(keeper.Keep("You asked DeepThought: "+message +"\nDeepThought says: "+keeper.Answer()+"\n")); //appending Q&A to file and writing to text area in one go
 	           
 	        } 
     }

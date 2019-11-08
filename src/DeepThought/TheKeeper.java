@@ -1,5 +1,6 @@
 package DeepThought;
 import java.io.*;
+import java.util.Random;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -8,6 +9,7 @@ import java.util.Calendar;
 
 public class TheKeeper extends TheTruth{
 	
+	int i = new Random().nextInt(10);
 	public TheKeeper() {
 		
 	}
@@ -15,7 +17,7 @@ public class TheKeeper extends TheTruth{
 	//add history file as well, that just appends everything written to log file to itself but only populates the main window if the history menu button is pressed  
 	//-> also add history menu button too :D 
 	
-	void Keep(String Message) { //this will be tied to the button "ask"
+	String Keep(String Message) { //this will be tied to the button "ask"
 		
 		try{
 			String s = new SimpleDateFormat("dd:MM:yyyy-HH:mm:ss").format(Calendar.getInstance().getTime());// getting time and date for each question
@@ -28,6 +30,7 @@ public class TheKeeper extends TheTruth{
 	    catch (IOException e){
 	      	System.out.println("Error: " + e.getMessage());
 	    }
+		return Message;
 	}
 		
 		void erase() {//function to erase the file at the end of session, needs to be tied to the Exit function. 
@@ -43,6 +46,11 @@ public class TheKeeper extends TheTruth{
 		      	System.out.println("Error: " + e.getMessage());
 		    }
 
+	}
+		
+	String Answer() {
+		this.answer=answers[i];
+		return answer;		
 	}
 	String TheMessage() { // overwrite the parent method
 		

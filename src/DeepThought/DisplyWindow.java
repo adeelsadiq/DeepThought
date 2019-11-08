@@ -30,7 +30,7 @@ public class DisplyWindow extends TheTruth implements ActionListener{
 
 	public DisplyWindow() {
 		//Creating the Frame
-
+		myTextArea.setEditable(false);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(700, 700);
 		menuBar.add(file);
@@ -68,17 +68,18 @@ public class DisplyWindow extends TheTruth implements ActionListener{
 		String s = e.getActionCommand();  //creating the string instance to hold the action command 
 		if (s.equals("Reset")) { //Verifying which button was pushed
 			keeper.erase(); //erasing the file if reset was pushed 
+			myTextArea.setText(""); //erases the text area 
 		}else if (s.equals("Send")) { //Verifying which button was pushed
-			if (myTextField.getText().isBlank()) {
+			if (myTextField.getText().isBlank()) { //check if the text field is blank when the "ask" button is pressed. 
 				myTextArea.append("Ask a question will you, or do you want me to guess the question too?\n");
 			}else {
 				this.message = myTextField.getText();
 				myTextArea.append(keeper.Keep("You asked DeepThought: "+message +"\nDeepThought says: "+keeper.Answer()+"\n")); //appending Q&A to file and writing to text area in one go
 			}
 		} else if (s.equals("History")) { //Verifying which button was pushed
-			TheReader seeker = new TheReader();
+			TheReader reader = new TheReader();
 			try {
-				myTextArea.append(seeker.read());
+				myTextArea.append(reader.read());
 			} catch (FileNotFoundException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();

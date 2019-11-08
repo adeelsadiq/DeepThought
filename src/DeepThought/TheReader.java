@@ -10,7 +10,7 @@ public class TheReader extends TheTruth{
 
 	}
 
-	String read() throws FileNotFoundException{
+	String read() throws FileNotFoundException{//another way to error handle, we throw the error and the invoking method does the catching
 		String Message=null;
 
 		

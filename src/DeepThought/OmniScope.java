@@ -46,7 +46,7 @@ public class OmniScope extends TheTruth implements ActionListener{
 	    
 //	    send.add(label);
 	    
-	    panel.add(pop);
+	 
 	    panel.add(label); // Components Added using Flow Layout
 	    panel.add(tf);
 	    panel.add(send);

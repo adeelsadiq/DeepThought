@@ -2,11 +2,16 @@ package DeepThought;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 import javax.swing.*;
 
 //this class is for drawing out the actual GUI component of the program
 
-public class OmniScope extends TheTruth implements ActionListener {
+public class OmniScope extends TheTruth implements ActionListener{
 	  JFrame frame = new JFrame("Deep Thought");
 	  JMenuBar mb = new JMenuBar();
 	  JMenu m1 = new JMenu("FILE");
@@ -15,12 +20,14 @@ public class OmniScope extends TheTruth implements ActionListener {
 	  JMenuItem m22 = new JMenuItem("Save as");  
 	//Creating the panel at bottom and adding components
 	    JPanel panel = new JPanel(); // the panel is not visible in output
-	    JLabel label = new JLabel("Enter Text");
+	    JLabel label = new JLabel("Ask your pesky questions");
 	    JTextField tf = new JTextField(30); // accepts up to 100 characters
 	    JButton send = new JButton("Send");
 	    JButton reset = new JButton("Reset");
 	    // Text Area at the Center
 	    JTextArea ta = new JTextArea();
+//	    JPopupMenu pop = new JPopupMenu();
+	
 	  
 	public OmniScope() {
 		 //Creating the Frame
@@ -37,7 +44,9 @@ public class OmniScope extends TheTruth implements ActionListener {
 	    send.addActionListener(this);
 	    reset.addActionListener(this);
 	    
-	    send.add(label); // Components Added using Flow Layout
+//	    send.add(label);
+	    
+	    panel.add(pop);
 	    panel.add(label); // Components Added using Flow Layout
 	    panel.add(tf);
 	    panel.add(send);
@@ -48,7 +57,7 @@ public class OmniScope extends TheTruth implements ActionListener {
 	    frame.getContentPane().add(BorderLayout.NORTH, mb);
 	    frame.getContentPane().add(BorderLayout.CENTER, ta);
 	    frame.setVisible(true);
-	    
+	   
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) 
@@ -58,10 +67,12 @@ public class OmniScope extends TheTruth implements ActionListener {
         if (s.equals("Reset")) { //Verifying which button was pushed
            keeper.erase(); //erasing the file if reset was pushed 
         }else if (s.equals("Send")) { //Verifying which button was pushed
-	        	
+	        	if (tf.getText().isBlank()) {
+	        		ta.append("Ask a question will you, or do you want me to guess the question too?\n");
+	        	}else {
 	           this.message = tf.getText();
 	           ta.append(keeper.Keep("You asked DeepThought: "+message +"\nDeepThought says: "+keeper.Answer()+"\n")); //appending Q&A to file and writing to text area in one go
-	           
+	        	}
 	        } 
     }
     }   

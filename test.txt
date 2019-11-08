@@ -1,1 +1,5 @@
 
+08:11:2019-14:58:00: 
+You asked DeepThought: aup?
+DeepThought says: interesting question, let me think about it... nope its still 42
+

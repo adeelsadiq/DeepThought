@@ -18,7 +18,7 @@ public class TheKeeper extends TheTruth{
 	//-> also add history menu button too :D 
 	
 	String Keep(String Message) { //this will be tied to the button "ask"
-		
+		if (Message != null) {
 		try{
 			String s = new SimpleDateFormat("dd:MM:yyyy-HH:mm:ss").format(Calendar.getInstance().getTime());// getting time and date for each question
 
@@ -29,6 +29,8 @@ public class TheKeeper extends TheTruth{
 	    }
 	    catch (IOException e){
 	      	System.out.println("Error: " + e.getMessage());
+	    }}else {
+	    	System.out.println("Ask a question will you, or do you want me to guess the question too?");
 	    }
 		return Message;
 	}

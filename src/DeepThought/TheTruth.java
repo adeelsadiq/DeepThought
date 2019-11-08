@@ -2,6 +2,7 @@ package DeepThought;
 //the parent class for the  reader and writer. 
 public class TheTruth {
 	String message; 
+	static final String ANSWER = "The answer to your Question (if I can call it that) is ..... 42";
 	public TheTruth() {
 		
 	}

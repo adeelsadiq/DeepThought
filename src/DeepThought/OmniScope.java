@@ -2,12 +2,11 @@ package DeepThought;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.io.*;
 import javax.swing.*;
 
 //this class is for drawing out the actual GUI component of the program
 
-public class OmniScope implements ActionListener {
+public class OmniScope extends TheTruth implements ActionListener {
 	  JFrame frame = new JFrame("Deep Thought");
 	  JMenuBar mb = new JMenuBar();
 	  JMenu m1 = new JMenu("FILE");
@@ -19,6 +18,7 @@ public class OmniScope implements ActionListener {
 	    JLabel label = new JLabel("Enter Text");
 	    JTextField tf = new JTextField(30); // accepts up to 100 characters
 	    JButton send = new JButton("Send");
+	    JButton reset = new JButton("Reset");
 	    // Text Area at the Center
 	    JTextArea ta = new JTextArea();
 	  
@@ -35,7 +35,8 @@ public class OmniScope implements ActionListener {
 
 	    
 	    send.addActionListener(this);
-	    JButton reset = new JButton("Reset");
+	    reset.addActionListener(this);
+	    
 	    send.add(label); // Components Added using Flow Layout
 	    panel.add(label); // Components Added using Flow Layout
 	    panel.add(tf);
@@ -53,14 +54,20 @@ public class OmniScope implements ActionListener {
 	public void actionPerformed(ActionEvent e) 
     { 
         String s = e.getActionCommand(); 
-        if (s.equals("submit")) { 
-            // set the text of the label to the text of the field 
-           
-  
-            // set the text of field to blank 
-            tf.setText("  "); 
-        } 
-    } 
-}
+        if (s.equals("Reset")) { 
+        
+           TheKeeper keeper = new TheKeeper();
+           keeper.erase();
+        }else if (s.equals("Send")) { 
+	        	
+	           message = tf.getText();
+	           TheKeeper keeper = new TheKeeper(); //the file writing method keeper gets an instance created 
+	           keeper.Keep("You asked DeepThought: "+message +"\nDeepThought says: "+ANSWER+"\n");
+	           ta.append("You asked DeepThought: "+message +"\nDeepThought says: "+ANSWER+"\n");
+//	           ta.append("\nDeepThought says: "+ANSWER);
+	           
+	        } 
+    }
+    }   
 
 

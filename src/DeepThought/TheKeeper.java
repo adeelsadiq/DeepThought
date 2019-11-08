@@ -18,11 +18,10 @@ public class TheKeeper extends TheTruth{
 	void Keep(String Message) { //this will be tied to the button "ask"
 		
 		try{
-			String s = new SimpleDateFormat("dd:MM:yyyy-HH:mm:ss").format(Calendar.getInstance().getTime());
+			String s = new SimpleDateFormat("dd:MM:yyyy-HH:mm:ss").format(Calendar.getInstance().getTime());// getting time and date for each question
 
 			PrintWriter scribe = new PrintWriter((new FileWriter("test.txt", true)));
-
-	      	scribe.println(s+": "+Message);
+	      	scribe.println(s+": \n"+Message); //adding date and time with each question
 	      	this.message = Message;
 	      	scribe.close();
 	    }
@@ -31,7 +30,7 @@ public class TheKeeper extends TheTruth{
 	    }
 	}
 		
-		void erase() {
+		void erase() {//function to erase the file at the end of session, needs to be tied to the Exit function. 
 			
 			try{
 				

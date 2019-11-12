@@ -1,53 +1,21 @@
 
-12:11:2019-17:49:31: 
-dfe: dfedf
-DeepThought says: your answer in hex is 0x2A
+12:11:2019-18:10:15: 
+jhh: jg
+DeepThought says: Ok Stop! its never going to be anything othe than 42!
 
-12:11:2019-17:49:31: 
-dfe: dfedf
-DeepThought says: Its 42 ok, now stop bugging me
-
-12:11:2019-17:49:32: 
-dfe: dfedf
-DeepThought says: The Answer is *DRAMATIC PAUSE* ..... 42!!!
-
-12:11:2019-17:49:32: 
-dfe: dfedf
-DeepThought says: Its 42
-
-12:11:2019-17:49:32: 
-dfe: dfedf
-DeepThought says: Its 42 ok, now stop bugging me
-
-12:11:2019-17:49:33: 
-dfe: dfedf
+12:11:2019-18:10:15: 
+jhh: jg
 DeepThought says: The answer is 24 written backwards
 
-12:11:2019-17:49:33: 
-dfe: dfedf
+12:11:2019-18:10:15: 
+jhh: jg
 DeepThought says: The answer is 42!
 
-12:11:2019-17:51:22: 
-dfdsf: fgrgrfgr
+12:11:2019-18:10:16: 
+jhh: jg
 DeepThought says: The answer is 42!
 
-12:11:2019-17:51:22: 
-dfdsf: fgrgrfgr
-DeepThought says: your answer in hex is 0x2A
-
-12:11:2019-17:51:22: 
-dfdsf: fgrgrfgr
+12:11:2019-18:10:16: 
+jhh: jg
 DeepThought says: The answer is 24 written backwards
-
-12:11:2019-17:51:23: 
-dfdsf: fgrgrfgr
-DeepThought says: The answer is 24 written backwards
-
-12:11:2019-17:51:23: 
-dfdsf: fgrgrfgr
-DeepThought says: 42
-
-12:11:2019-17:51:23: 
-dfdsf: fgrgrfgr
-DeepThought says: Its 42 ok, now stop bugging me
 

@@ -2,7 +2,6 @@ package DeepThought;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.io.File;
 import java.io.FileNotFoundException;
 
 import javax.swing.*;
@@ -56,22 +55,26 @@ public class DisplyWindow extends TheTruth implements ActionListener{
 		panel.add(myTextField);
 		panel.add(send);
 		panel.add(reset);
-
+		panel.setBackground(Color.orange);
+		myTextField.setBackground(Color.LIGHT_GRAY);
+		myTextArea.setBackground(Color.orange);
 		//Adding Components to the frame.
 //		frame.getContentPane().add(BorderLayout.NORTH, topLabel);
 		frame.getContentPane().add(BorderLayout.SOUTH, panel);
 		frame.getContentPane().add(BorderLayout.NORTH, menuBar);
-		frame.getContentPane().add(BorderLayout.CENTER, myTextArea);
+		frame.getContentPane().add(BorderLayout.CENTER, myTextArea); 
+		
 		frame.setVisible(true);
+		
 
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) 
 	{ 
-		TheWriter keeper = new TheWriter(); //the file writing method keeper gets an instance created 
+		TheWriter writer = new TheWriter(); //the file writing method keeper gets an instance created 
 		String s = e.getActionCommand();  //creating the string instance to hold the action command 
 		if (s.equals("Reset")) { //Verifying which button was pushed
-			keeper.erase(); //erasing the file if reset was pushed 
+			writer.erase(); //erasing the file if reset was pushed 
 			myTextArea.setText(""); //erases the text area 
 		}else if(s.equals("Send")) {{ //Verifying which button was pushed
 			if (myTextField.getText().isBlank()) { //check if the text field is blank when the "ask" button is pressed. 
@@ -80,14 +83,14 @@ public class DisplyWindow extends TheTruth implements ActionListener{
 				this.message = myTextField.getText();
 				
 				//appending Q&A to file and writing to text area in one go
-				myTextArea.append(keeper.Keep(name+": "+message +"\nDeepThought says: "+keeper.Answer()+"\n")); 
+				myTextArea.append(writer.Keep(name+": "+message +"\nDeepThought says: "+writer.Answer()+"\n")); 
 			}}
 		} else if (s.equals("History")) { //Verifying which button was pushed
 			TheReader reader = new TheReader();
 			
 			try {
 				
-				myTextArea.append(reader.read());
+				myTextArea.append(reader.read()); //reading from the text file and appending it to the text area
 			} catch (FileNotFoundException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();

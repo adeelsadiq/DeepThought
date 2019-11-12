@@ -17,9 +17,9 @@ public class TheOracle {
 		//      keeper.Keep(ANSWER);
 
 		
-		TheReader seeker = new TheReader();
+		TheReader reader = new TheReader();
 		try {
-			seeker.read();
+			System.out.println(reader.read());
 		} catch (FileNotFoundException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();

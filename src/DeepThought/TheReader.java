@@ -3,7 +3,7 @@ import java.util.*;
 import java.io.*;
 
 //this is the file reader class, I also want to add an array to this somehow, not sure yet
-
+//this needs looking at
 public class TheReader extends TheTruth{
 
 	public TheReader() {
@@ -16,7 +16,8 @@ public class TheReader extends TheTruth{
 		
 			Scanner scanner = new Scanner(new FileReader("test.txt"));
 			while (scanner.hasNextLine()) { // to avoid reading past the end of the file
-				Message= (scanner.nextLine());	
+				Message= Message + "\n"+ (scanner.nextLine());	//appending the string with the next string and a new line :D took us a while!
+				
 			}
 			scanner.close();
 	

@@ -2,7 +2,6 @@ package DeepThought;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.io.FileNotFoundException;
 
 import javax.swing.*;
 
@@ -83,18 +82,12 @@ public class DisplyWindow extends TheTruth implements ActionListener{
 				this.message = myTextField.getText();
 				
 				//appending Q&A to file and writing to text area in one go
-				myTextArea.append(writer.Keep(name+" asks: "+message +"\nDeepThought says: "+writer.Answer()+"\n")); 
+				myTextArea.append(writer.write(name+" asks: "+message +"\nDeepThought says: "+writer.Answer()+"\n")); 
 			}}
 		} else if (s.equals("History")) { //Verifying which button was pushed
 			TheReader reader = new TheReader();
 			
-			try {
-				
-				myTextArea.append(reader.read()); //reading from the text file and appending it to the text area
-			} catch (FileNotFoundException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
+			myTextArea.append(reader.read()); //reading from the text file and appending it to the text area
 		} 
 	}
 }   

@@ -17,7 +17,7 @@ public class TheWriter extends TheTruth{
 	//add history file as well, that just appends everything written to log file to itself but only populates the main window if the history menu button is pressed  
 	//-> also add history menu button too :D 
 
-	String Keep(String Message) { //this will be tied to the button "ask"
+	String write(String Message) { //this will be tied to the button "ask"
 		if (Message != null) {
 			try{
 				String s = new SimpleDateFormat("dd:MM:yyyy-HH:mm:ss").format(Calendar.getInstance().getTime());// getting time and date for each question

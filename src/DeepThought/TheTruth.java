@@ -12,13 +12,13 @@ public class TheTruth {
 		
 	}
 
-	void Keep() {
+	String write() {
 		//write function, children will overwrite
-		System.out.println("Nothing to Write here folks!");
+		return "Nothing to Write here folks!";
 	}
-	void seek() {
+	String read() {
 		//read function, children will overwrite
-		System.out.println("Nothing to read here folks!");
+		return "Nothing to read here folks!";
 	}
 	
 } 

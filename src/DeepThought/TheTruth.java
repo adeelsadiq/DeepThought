@@ -9,19 +9,18 @@ public class TheTruth {
 			"All this brain and I am answering questions like this, *sigh the answer is 42","The answer is 24 written backwards","Ok Stop! its never going to be anything othe than 42!",};
 	
 	public TheTruth() {
-
+		
 	}
 
 	void Keep() {
 		//write function, children will overwrite
+		System.out.println("Nothing to Write here folks!");
 	}
 	void seek() {
 		//read function, children will overwrite
+		System.out.println("Nothing to read here folks!");
 	}
-
-	String TheMessage() { // this I will tie to a random button called the truth or something 
-		return "Seek and you shall find"; //your random pseudo-profound nonsense 
-	}
-
-
+	
 }
+
+

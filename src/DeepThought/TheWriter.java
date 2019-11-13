@@ -12,7 +12,7 @@ public class TheWriter extends TheTruth{
 	int i = new Random().nextInt(14);
 	public TheWriter() {
 
-	}
+	} 
 	//idea:
 	//add history file as well, that just appends everything written to log file to itself but only populates the main window if the history menu button is pressed  
 	//-> also add history menu button too :D 

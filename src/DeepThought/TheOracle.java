@@ -18,7 +18,7 @@ public class TheOracle {
 
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
-				try {
+				try { 
 					DisplyWindow mainWin = new DisplyWindow();
 					
 				} catch (Exception e) {

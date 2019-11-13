@@ -9,7 +9,7 @@ import javax.swing.*;
 
 public class DisplyWindow extends TheTruth implements ActionListener{
 	String name;
-	
+	 
 	JFrame frame = new JFrame("Deep Thought");
 	JMenuBar menuBar = new JMenuBar();
 	JMenu file = new JMenu("FILE");

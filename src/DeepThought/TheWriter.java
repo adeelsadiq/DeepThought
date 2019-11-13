@@ -56,7 +56,7 @@ public class TheWriter extends TheTruth{
 	}
 	String TheMessage() { // overwrite the parent method
 
-		return this.message;
+		return this.message; 
 	}
 
 

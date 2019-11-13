@@ -24,7 +24,7 @@ public class TheOracle {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-			}
+			} 
 		});
 	}
 

@@ -27,7 +27,7 @@ public class DisplyWindow extends TheTruth implements ActionListener{
 	// Text Area at the Center
 	JTextArea myTextArea = new JTextArea("Ask DeepThought anything!         \n");
 	
-
+ 
 
 
 	public DisplyWindow() {

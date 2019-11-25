@@ -1,6 +1,5 @@
 package DeepThought;
 import java.io.*;
-import java.util.Random;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -9,20 +8,20 @@ import java.util.Calendar;
 
 public class TheWriter extends Message{
 
-	int i = new Random().nextInt(14); //this will give us a random number that we can use to access the answers array element at random
+	
 	public TheWriter() {
 
 	} 
-	//idea:
-	//add history file as well, that just appends everything written to log file to itself but only populates the main window if the history menu button is pressed  
-	//-> also add history menu button too :D 
 
 	String write(String Message) { //this will be tied to the button "ask" writes 
+		Message msg = new Message();
+		msg.write(Message);
 		if (Message != null) {
 			try{
 				String time = new SimpleDateFormat("dd:MM:yyyy-HH:mm:ss").format(Calendar.getInstance().getTime());// getting time and date for each question
 
 				PrintWriter writer = new PrintWriter((new FileWriter("test.txt", true)));
+				
 				writer.println(time+": \n"+Message); //adding date and time with each question
 				this.message = Message;
 				writer.close();
@@ -35,7 +34,7 @@ public class TheWriter extends Message{
 		return Message;
 	}
 
-	void erase() {//function to erase the file at the end of session, needs to be tied to the Exit function. 
+	void erase() {//function to erase the file at button push. 
 
 		try{
 
@@ -50,10 +49,6 @@ public class TheWriter extends Message{
 
 	}
 
-	String Answer() {
-		this.answer=answers[i];
-		return answer;		
-	}
 	String TheMessage() { // overwrite the parent method
 
 		return this.message; 

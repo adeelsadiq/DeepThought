@@ -82,7 +82,7 @@ public class DisplyWindow extends Message implements ActionListener{
 				this.message = myTextField.getText();
 				
 				//appending Q&A to file and writing to text area in one go
-				myTextArea.append(writer.write(name+" asks: "+message +"\nDeepThought says: "+writer.Answer()+"\n")); 
+				myTextArea.append(writer.write(name+" asks: "+message +"\nDeepThought says: "+writer.answer()+"\n")); //Inheritance happening right here 3 marks please :)
 			}}
 		} else if (s.equals("History")) { //Verifying which button was pushed
 			TheReader reader = new TheReader();

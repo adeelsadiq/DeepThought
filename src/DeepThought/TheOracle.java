@@ -1,23 +1,45 @@
 package DeepThought;
-import javax.swing.*;
-//import java.awt.event.*;
-import java.awt.*;
+import java.awt.EventQueue;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 
 public class TheOracle {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-			
-	
-        
-//        String message = "this is my melody 2";
-//        TheKeeper keeper = new TheKeeper();
-//        keeper.Keep(message);
-//        
-//        TheSeeker seeker = new TheSeeker();
-//        seeker.Seek();
+		int choice;
+		try {
+			Scanner scanner = new Scanner(System.in);
+			System.out.println("Please enter 42 to start the program");
+			choice=scanner.nextInt();
+			while(choice!=42) {
+				System.out.println("Please enter 42 to start the program");
+				choice=scanner.nextInt();
+				scanner.close();
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println("LAunching Deepthought in....");
+		for(int i=3; i>0; i--) {
+			System.out.println(i+"..............");
+			for(long  j=1111111111; j>0; j--) {
+				//just waiting 
+			}
+		}
 		
-		
+
+
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try { 
+					DisplyWindow mainWin = new DisplyWindow();
+					
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			} 
+		});
 	}
 
 }

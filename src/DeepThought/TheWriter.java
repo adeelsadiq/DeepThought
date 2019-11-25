@@ -7,9 +7,9 @@ import java.util.Calendar;
 //this is the main writer class, writes to the files and I want to also add arrays somehow, Maybe add users in here, they get stored in an array and get their own file 
 //and we can access that by sidebar menu, but first the core project and then we can mess about with this.
 
-public class TheWriter extends TheTruth{
+public class TheWriter extends Message{
 
-	int i = new Random().nextInt(14);
+	int i = new Random().nextInt(14); //this will give us a random number that we can use to access the answers array element at random
 	public TheWriter() {
 
 	} 
@@ -17,13 +17,13 @@ public class TheWriter extends TheTruth{
 	//add history file as well, that just appends everything written to log file to itself but only populates the main window if the history menu button is pressed  
 	//-> also add history menu button too :D 
 
-	String write(String Message) { //this will be tied to the button "ask"
+	String write(String Message) { //this will be tied to the button "ask" writes 
 		if (Message != null) {
 			try{
-				String s = new SimpleDateFormat("dd:MM:yyyy-HH:mm:ss").format(Calendar.getInstance().getTime());// getting time and date for each question
+				String time = new SimpleDateFormat("dd:MM:yyyy-HH:mm:ss").format(Calendar.getInstance().getTime());// getting time and date for each question
 
 				PrintWriter writer = new PrintWriter((new FileWriter("test.txt", true)));
-				writer.println(s+": \n"+Message); //adding date and time with each question
+				writer.println(time+": \n"+Message); //adding date and time with each question
 				this.message = Message;
 				writer.close();
 			}

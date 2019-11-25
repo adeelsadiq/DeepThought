@@ -7,7 +7,7 @@ import javax.swing.*;
 
 //this class is for drawing out the actual GUI component of the program
 
-public class DisplyWindow extends TheTruth implements ActionListener{
+public class DisplyWindow extends Message implements ActionListener{
 	String name;
 	 
 	JFrame frame = new JFrame("Deep Thought");

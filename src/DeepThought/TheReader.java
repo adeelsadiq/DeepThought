@@ -4,7 +4,7 @@ import java.io.*;
 
 //this is the file reader class, I also want to add an array to this somehow, not sure yet
 //this needs looking at
-public class TheReader extends TheTruth{
+public class TheReader extends Message{
 
 	public TheReader() {
 
